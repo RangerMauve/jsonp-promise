@@ -11,14 +11,14 @@
 
 ## API
 
-	``` javascript
-		var jsonp = require("jsonp-promise");
-		jsonp("www.example.com").then(function(data){
-			console.log(data);
-		}).catch(function(e){
-			console.error(e);
-		});
-	```
+``` javascript
+	var jsonp = require("jsonp-promise");
+	jsonp("www.example.com").then(function(data){
+		console.log(data);
+	}).catch(function(e){
+		console.error(e);
+	});
+```
 
 ## License
 
