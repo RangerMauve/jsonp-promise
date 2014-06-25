@@ -3,7 +3,8 @@ var Promise = require("promise");
 
 module.exports = function jsonp() {
 	return new Promise(function (resolve, reject) {
-		var args = [].slice.call(arguments).push(function (err, res) {
+		var args = [].slice.call(arguments);
+		args.push(function (err, res) {
 			if (err) reject(err)
 			else resolve(res);
 		});
