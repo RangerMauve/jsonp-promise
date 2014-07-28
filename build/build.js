@@ -661,7 +661,7 @@ function coerce(val) {
 }
 
 });
-require.register("learnboost-jsonp/index.js", function(exports, require, module){
+require.register("webmodules-jsonp/index.js", function(exports, require, module){
 /**
  * Module dependencies
  */
@@ -1182,14 +1182,15 @@ require.register("jsonp-promise/index.js", function(exports, require, module){
 var jsonp = require("jsonp");
 var Promise = require("promise");
 
-module.exports = function jsonp() {
+module.exports = function jsonp_promise(url, options) {
+	var args = [].slice.call(arguments);
 	return new Promise(function (resolve, reject) {
-		var args = [].slice.call(arguments).push(function (err, res) {
+		args.push(function (err, res) {
 			if (err) reject(err)
 			else resolve(res);
 		});
 
-		jsonp.apply(null,args);
+		jsonp.apply(null, args);
 	});
 };
 
@@ -1198,16 +1199,16 @@ module.exports = function jsonp() {
 
 
 
-require.alias("learnboost-jsonp/index.js", "jsonp-promise/deps/jsonp/index.js");
-require.alias("learnboost-jsonp/index.js", "jsonp-promise/deps/jsonp/index.js");
-require.alias("learnboost-jsonp/index.js", "jsonp/index.js");
-require.alias("visionmedia-debug/browser.js", "learnboost-jsonp/deps/debug/browser.js");
-require.alias("visionmedia-debug/debug.js", "learnboost-jsonp/deps/debug/debug.js");
-require.alias("visionmedia-debug/browser.js", "learnboost-jsonp/deps/debug/index.js");
+require.alias("webmodules-jsonp/index.js", "jsonp-promise/deps/jsonp/index.js");
+require.alias("webmodules-jsonp/index.js", "jsonp-promise/deps/jsonp/index.js");
+require.alias("webmodules-jsonp/index.js", "jsonp/index.js");
+require.alias("visionmedia-debug/browser.js", "webmodules-jsonp/deps/debug/browser.js");
+require.alias("visionmedia-debug/debug.js", "webmodules-jsonp/deps/debug/debug.js");
+require.alias("visionmedia-debug/browser.js", "webmodules-jsonp/deps/debug/index.js");
 require.alias("guille-ms.js/index.js", "visionmedia-debug/deps/ms/index.js");
 
 require.alias("visionmedia-debug/browser.js", "visionmedia-debug/index.js");
-require.alias("learnboost-jsonp/index.js", "learnboost-jsonp/index.js");
+require.alias("webmodules-jsonp/index.js", "webmodules-jsonp/index.js");
 require.alias("then-promise/index.js", "jsonp-promise/deps/promise/index.js");
 require.alias("then-promise/core.js", "jsonp-promise/deps/promise/core.js");
 require.alias("then-promise/index.js", "promise/index.js");
