@@ -2,11 +2,11 @@
   "name": "jsonp-promise",
   "repo": "rangermauve/jsonp-promise",
   "description": "A wrapper for webmodules/jsonp that uses promises",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [],
   "dependencies": {
     "webmodules/jsonp": "*",
-    "then/promise": "*"
+    "then/promise": "5.0.0"
   },
   "development": {},
   "license": "MIT",
